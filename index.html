@@ -1,1 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ingeniería Mecánica - Aprende Paso a Paso</title>
 
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #020617;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    background: #1e293b;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar button:hover {
+    background: #38bdf8;
+}
+
+/* Content */
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #38bdf8;
+}
+
+/* Progress bar */
+.progress {
+    background: #334155;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    height: 15px;
+    background: #38bdf8;
+    width: 0%;
+    transition: 0.5s;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>📚 Ingeniería</h2>
+
+    <button onclick="cargar('inicio')">Inicio</button>
+    <button onclick="cargar('nivel1')">Nivel 1 - Fundamentos</button>
+    <button onclick="cargar('nivel2')">Nivel 2 - Base</button>
+    <button onclick="cargar('nivel3')">Nivel 3 - Mecánica</button>
+    <button onclick="cargar('nivel4')">Nivel 4 - Aplicación</button>
+</div>
+
+<div class="content">
+
+    <div class="progress">
+        <div class="progress-bar" id="barra"></div>
+    </div>
+
+    <div id="contenido">
+        <h1>Bienvenido</h1>
+        <p>Empieza tu camino en Ingeniería Mecánica paso a paso.</p>
+    </div>
+
+</div>
+
+<script>
+let progreso = 0;
+
+function actualizarProgreso(valor) {
+    progreso += valor;
+    if (progreso > 100) progreso = 100;
+    document.getElementById("barra").style.width = progreso + "%";
+}
+
+function cargar(seccion) {
+    let contenido = document.getElementById("contenido");
+
+    if (seccion === "inicio") {
+        contenido.innerHTML = `
+        <h1>Inicio</h1>
+        <div class="card">
+        <p>Esta plataforma te llevará desde cero hasta nivel profesional en ingeniería mecánica.</p>
+        </div>`;
+    }
+
+    if (seccion === "nivel1") {
+        contenido.innerHTML = `
+        <h1>🔢 Nivel 1 - Fundamentos</h1>
+
+        <div class="card">
+        <h3>Cálculo I</h3>
+        <p>Aprende límites, derivadas y funciones.</p>
+        <button onclick="completar()">Completar</button>
+        </div>
+
+        <div class="card">
+        <h3>Álgebra Lineal</h3>
+        <p>Vectores, matrices y sistemas.</p>
+        <button onclick="completar()">Completar</button>
+        </div>
+
+        <div class="card">
+        <h3>Estadística</h3>
+        <p>Probabilidad y análisis de datos.</p>
+        <button onclick="completar()">Completar</button>
+        </div>
+        `;
+    }
+
+    if (seccion === "nivel2") {
+        contenido.innerHTML = `
+        <h1>⚙️ Nivel 2 - Base Ingenieril</h1>
+
+        <div class="card">
+        <h3>Física</h3>
+        <p>Mecánica, energía y movimiento.</p>
+        <button onclick="completar()">Completar</button>
+        </div>
+
+        <div class="card">
+        <h3>Materiales</h3>
+        <p>Propiedades y comportamiento.</p>
+        <button onclick="completar()">Completar</button>
+        </div>
+        `;
+    }
+
+    if (seccion === "nivel3") {
+        contenido.innerHTML = `
+        <h1>🔩 Nivel 3 - Núcleo Mecánico</h1>
+
+        <div class="card">
+        <h3>Termodinámica</h3>
+        <p>Calor, energía y sistemas.</p>
+        <button onclick="completar()">Completar</button>
+        </div>
+
+        <div class="card">
+        <h3>Fluidos</h3>
+        <p>Comportamiento de líquidos y gases.</p>
+        <button onclick="completar()">Completar</button>
+        </div>
+        `;
+    }
+
+    if (seccion === "nivel4") {
+        contenido.innerHTML = `
+        <h1>🏭 Nivel 4 - Aplicación</h1>
+
+        <div class="card">
+        <h3>Manufactura</h3>
+        <p>Procesos industriales.</p>
+        <button onclick="completar()">Completar</button>
+        </div>
+
+        <div class="card">
+        <h3>Automatización</h3>
+        <p>Sistemas inteligentes.</p>
+        <button onclick="completar()">Completar</button>
+        </div>
+        `;
+    }
+}
+
+function completar() {
+    actualizarProgreso(10);
+    alert("¡Avance registrado!");
+}
+</script>
+
+</body>
+</html>
