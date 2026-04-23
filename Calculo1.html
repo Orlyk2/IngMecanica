@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cálculo I</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+    padding: 30px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+    background: #38bdf8;
+    border: none;
+    cursor: pointer;
+}
+
+.correcto {
+    color: #22c55e;
+}
+
+.incorrecto {
+    color: #ef4444;
+}
+</style>
+</head>
+
+<body>
+
+<h1>📘 Cálculo I</h1>
+
+<div class="card">
+<h2>🔢 Funciones</h2>
+<p>Una función es una relación entre un valor de entrada y uno de salida.</p>
+
+<p><b>Ejemplo:</b> f(x) = x²</p>
+<p>Si x = 3 → f(3) = 9</p>
+</div>
+
+<div class="card">
+<h2>📉 Límites</h2>
+<p>El límite indica a qué valor se acerca una función.</p>
+
+<p><b>Ejemplo:</b></p>
+<p>lim x→2 (x²) = ?</p>
+
+<input type="number" id="limite">
+<br>
+<button onclick="verificarLimite()">Verificar</button>
+
+<p id="resultadoLimite"></p>
+</div>
+
+<div class="card">
+<h2>📈 Derivadas</h2>
+<p>La derivada mide el cambio de una función.</p>
+
+<p><b>Ejemplo:</b></p>
+<p>f(x) = x² → f'(x) = ?</p>
+
+<input type="text" id="derivada">
+<br>
+<button onclick="verificarDerivada()">Verificar</button>
+
+<p id="resultadoDerivada"></p>
+</div>
+
+<br>
+<a href="../index.html">⬅ Volver</a>
+
+<script>
+function verificarLimite() {
+    let respuesta = document.getElementById("limite").value;
+    let resultado = document.getElementById("resultadoLimite");
+
+    if (respuesta == 4) {
+        resultado.innerHTML = "✅ Correcto";
+        resultado.className = "correcto";
+    } else {
+        resultado.innerHTML = "❌ Incorrecto, intenta de nuevo";
+        resultado.className = "incorrecto";
+    }
+}
+
+function verificarDerivada() {
+    let respuesta = document.getElementById("derivada").value;
+    let resultado = document.getElementById("resultadoDerivada");
+
+    if (respuesta.toLowerCase() == "2x") {
+        resultado.innerHTML = "✅ Correcto";
+        resultado.className = "correcto";
+    } else {
+        resultado.innerHTML = "❌ Incorrecto, la respuesta es 2x";
+        resultado.className = "incorrecto";
+    }
+}
+</script>
+
+</body>
+</html>
