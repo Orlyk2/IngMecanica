@@ -2,23 +2,55 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Ingeniería Mecánica Completa</title>
+<title>Ingeniería Mecánica</title>
 
 <style>
 body {margin:0; font-family:Arial; background:#0f172a; color:white; display:flex;}
+
 .sidebar {width:280px; background:#020617; padding:20px;}
-.sidebar button {width:100%; padding:10px; margin:5px 0; background:#1e293b; color:white; border:none; cursor:pointer;}
+
+.sidebar button {
+width:100%;
+padding:10px;
+margin:5px 0;
+background:#1e293b;
+color:white;
+border:none;
+cursor:pointer;
+}
+
 .sidebar button:hover {background:#38bdf8;}
+
 .content {flex:1; padding:30px;}
-.card {background:#1e293b; padding:15px; border-radius:10px; margin:10px 0;}
-a {color:#38bdf8; text-decoration:none;}
+
+.card {
+background:#1e293b;
+padding:15px;
+border-radius:10px;
+margin:10px 0;
+}
+
+.card h3 {color:#38bdf8;}
+
+.card p {color:#cbd5e1; line-height:1.5;}
+
+a {
+display:inline-block;
+margin-top:10px;
+padding:10px;
+background:#38bdf8;
+color:black;
+text-decoration:none;
+border-radius:5px;
+font-weight:bold;
+}
 </style>
 </head>
 
 <body>
 
 <div class="sidebar">
-<h2>📚 Ingeniería</h2>
+<h2>⚙️ Ingeniería Mecánica</h2>
 
 <button onclick="cargar('sem1')">Sem 1</button>
 <button onclick="cargar('sem2')">Sem 2</button>
@@ -37,6 +69,7 @@ a {color:#38bdf8; text-decoration:none;}
 </div>
 
 <script>
+
 function materia(t,d,link){
 return `
 <div class="card">
@@ -48,92 +81,246 @@ return `
 
 function cargar(s){
 
-let c = document.getElementById("contenido");
+let c=document.getElementById("contenido");
 
-/* SEMESTRE 1 */
+/* SEM 1 */
 if(s=="sem1"){
-c.innerHTML = `
+c.innerHTML=`
 <h1>📘 Semestre 1</h1>
-${materia("Cálculo I","Límites y derivadas","materias/calculo1.html")}
-${materia("Álgebra Lineal","Vectores y matrices","materias/algebra.html")}
-${materia("Programación I","Lógica básica","materias/programacion1.html")}
-${materia("Estadística","Probabilidad básica","materias/estadistica.html")}
+
+${materia(
+"Cálculo I",
+"Estudia límites, derivadas y funciones. Base para modelar movimiento, velocidad y cambios en sistemas mecánicos.",
+"materias/calculo1.html"
+)}
+
+${materia(
+"Física I",
+"Estudia la mecánica clásica: fuerza, movimiento y energía. Base fundamental de toda la ingeniería mecánica.",
+"materias/fisica1.html"
+)}
+
+${materia(
+"Dibujo Técnico",
+"Aprendizaje de planos, vistas y representación de piezas mecánicas en ingeniería.",
+"materias/dibujo.html"
+)}
+
+${materia(
+"Álgebra Lineal",
+"Uso de matrices y vectores para resolver problemas estructurales y mecánicos.",
+"materias/algebra.html"
+)}
 `;
 }
 
-/* SEMESTRE 2 */
+/* SEM 2 */
 if(s=="sem2"){
-c.innerHTML = `
+c.innerHTML=`
 <h1>📗 Semestre 2</h1>
-${materia("Cálculo II","Integrales","materias/calculo2.html")}
-${materia("Física I","Movimiento","materias/fisica1.html")}
-${materia("CAD","Diseño técnico","materias/cad.html")}
-${materia("Programación II","Algoritmos","materias/programacion2.html")}
+
+${materia(
+"Cálculo II",
+"Integrales aplicadas al cálculo de áreas, volúmenes y trabajo mecánico.",
+"materias/calculo2.html"
+)}
+
+${materia(
+"Física II",
+"Electromagnetismo y ondas aplicadas a sistemas mecánicos y energéticos.",
+"materias/fisica2.html"
+)}
+
+${materia(
+"Estática",
+"Estudio de cuerpos en equilibrio y fuerzas en reposo.",
+"materias/estatica.html"
+)}
+
+${materia(
+"CAD",
+"Diseño asistido por computadora para modelado de piezas mecánicas.",
+"materias/cad.html"
+)}
 `;
 }
 
-/* SEMESTRE 3 */
+/* SEM 3 */
 if(s=="sem3"){
-c.innerHTML = `
+c.innerHTML=`
 <h1>📙 Semestre 3</h1>
-${materia("Cálculo III","Multivariable","materias/calculo3.html")}
-${materia("Física II","Ondas y calor","materias/fisica2.html")}
-${materia("Materiales","Propiedades","materias/materiales.html")}
-${materia("Métodos Numéricos","Cálculo computacional","materias/metodos.html")}
+
+${materia(
+"Cálculo III",
+"Funciones multivariables aplicadas a sistemas mecánicos complejos.",
+"materias/calculo3.html"
+)}
+
+${materia(
+"Dinámica",
+"Estudio del movimiento de cuerpos bajo fuerzas aplicadas.",
+"materias/dinamica.html"
+)}
+
+${materia(
+"Resistencia de Materiales",
+"Analiza cómo los materiales soportan fuerzas y deformaciones.",
+"materias/resistencia.html"
+)}
+
+${materia(
+"Termodinámica I",
+"Estudio de energía, calor y trabajo en sistemas mecánicos.",
+"materias/termo1.html"
+)}
 `;
 }
 
-/* SEMESTRE 4 */
+/* SEM 4 */
 if(s=="sem4"){
-c.innerHTML = `
+c.innerHTML=`
 <h1>📕 Semestre 4</h1>
-${materia("Ecuaciones Diferenciales","Modelado","materias/ecuaciones.html")}
-${materia("Termodinámica I","Energía","materias/termo1.html")}
-${materia("Mecánica","Cinemática","materias/mecanica.html")}
+
+${materia(
+"Ecuaciones Diferenciales",
+"Modelado matemático de sistemas dinámicos mecánicos.",
+"materias/ecuaciones.html"
+)}
+
+${materia(
+"Mecánica de Fluidos",
+"Estudio del comportamiento de líquidos y gases en movimiento.",
+"materias/fluidos.html"
+)}
+
+${materia(
+"Termodinámica II",
+"Ciclos energéticos en motores y máquinas térmicas.",
+"materias/termo2.html"
+)}
+
+${materia(
+"Métodos Numéricos",
+"Solución aproximada de problemas complejos de ingeniería.",
+"materias/numericos.html"
+)}
 `;
 }
 
-/* SEMESTRE 5 */
+/* SEM 5 */
 if(s=="sem5"){
-c.innerHTML = `
+c.innerHTML=`
 <h1>📓 Semestre 5</h1>
-${materia("Resistencia de Materiales","Esfuerzos","materias/resistencia.html")}
-${materia("Termodinámica II","Procesos","materias/termo2.html")}
-${materia("Fluidos","Dinámica","materias/fluidos.html")}
-${materia("Transferencia de Calor","Energía térmica","materias/calor.html")}
+
+${materia(
+"Transferencia de Calor",
+"Estudio del flujo de energía térmica en sistemas mecánicos.",
+"materias/calor.html"
+)}
+
+${materia(
+"Máquinas Térmicas",
+"Motores, turbinas y sistemas de conversión de energía.",
+"materias/maquinas.html"
+)}
+
+${materia(
+"Elementos de Máquinas",
+"Diseño de piezas mecánicas como engranajes y ejes.",
+"materias/elementos.html"
+)}
+
+${materia(
+"Vibraciones Mecánicas",
+"Estudio del movimiento oscilatorio en sistemas mecánicos.",
+"materias/vibraciones.html"
+)}
 `;
 }
 
-/* SEMESTRE 6 */
+/* SEM 6 */
 if(s=="sem6"){
-c.innerHTML = `
+c.innerHTML=`
 <h1>📒 Semestre 6</h1>
-${materia("Diseño Mecánico","Máquinas","materias/diseno.html")}
-${materia("Sistemas Dinámicos","Control","materias/sistemas.html")}
-${materia("Manufactura","Producción","materias/manufactura.html")}
+
+${materia(
+"Diseño Mecánico",
+"Creación de sistemas mecánicos completos.",
+"materias/diseno.html"
+)}
+
+${materia(
+"Sistemas Dinámicos",
+"Modelado y control de sistemas en movimiento.",
+"materias/sistemas.html"
+)}
+
+${materia(
+"Manufactura",
+"Procesos de producción industrial de piezas mecánicas.",
+"materias/manufactura.html"
+)}
+
+${materia(
+"Control Automático",
+"Sistemas de regulación automática en máquinas.",
+"materias/control.html"
+)}
 `;
 }
 
-/* SEMESTRE 7 */
+/* SEM 7 */
 if(s=="sem7"){
-c.innerHTML = `
+c.innerHTML=`
 <h1>📔 Semestre 7</h1>
-${materia("Automatización","Industria","materias/automatizacion.html")}
-${materia("Mantenimiento","Gestión","materias/mantenimiento.html")}
-${materia("Simulación","Modelos","materias/simulacion.html")}
+
+${materia(
+"Mantenimiento Industrial",
+"Gestión del mantenimiento de maquinaria.",
+"materias/mantenimiento.html"
+)}
+
+${materia(
+"Automatización",
+"Sistemas mecánicos controlados por tecnología.",
+"materias/automatizacion.html"
+)}
+
+${materia(
+"Robótica",
+"Diseño de sistemas mecánicos automatizados.",
+"materias/robotica.html"
+)}
+
+${materia(
+"Gestión de Proyectos",
+"Planificación de proyectos de ingeniería.",
+"materias/proyectos.html"
+)}
 `;
 }
 
-/* SEMESTRE 8 */
+/* SEM 8 */
 if(s=="sem8"){
-c.innerHTML = `
+c.innerHTML=`
 <h1>📘 Semestre 8</h1>
-${materia("Proyecto de Grado","Trabajo final","materias/proyecto.html")}
-${materia("Práctica","Empresa","materias/practica.html")}
+
+${materia(
+"Proyecto de Grado",
+"Aplicación completa de toda la carrera.",
+"materias/proyecto.html"
+)}
+
+${materia(
+"Práctica Profesional",
+"Experiencia real en industria mecánica.",
+"materias/practica.html"
+)}
 `;
 }
 
 }
+
 </script>
 
 </body>
